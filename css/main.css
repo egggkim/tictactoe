@@ -1,0 +1,83 @@
+body {
+  font-family: bebas;
+  position: absolute;
+  text-align: center;
+  background-image: url('../images/bg-img.jpg');
+}
+
+.grid {
+  width: 600px;
+  height: 600px;
+  display: inline-block;
+  position: absolute;
+  top: 100px;
+}
+
+.square {
+  width: 180px;
+  height: 180px;
+  float: left;
+}
+
+h1 {
+  font-family: "Blackout-2am";
+  font-size: 60px;
+  color: white;
+  top: 40px;
+  left: 40px;
+  position: relative;
+}
+
+/* ======= ROW ONE ======= */
+
+#a1 {
+  border-bottom: 10px solid white;
+  border-right: 10px solid white;
+  opacity: 0.5;
+}
+
+#a2 {
+  border-bottom: 10px solid white;
+  border-right: 10px solid white;
+  opacity: 0.5;
+}
+
+#a3 {
+  border-bottom: 10px solid white;
+  opacity: 0.5;
+}
+
+/* ======= ROW TWO ======= */
+
+#b1 {
+  border-bottom: 10px solid white;
+  border-right: 10px solid white;
+  opacity: 0.5;
+}
+
+#b2 {
+  border-bottom: 10px solid white;
+  border-right: 10px solid white;
+  opacity: 0.5;
+}
+
+#b3 {
+  border-bottom: 10px solid white;
+  opacity: 0.5;
+}
+
+/* ======= ROW THREE ======= */
+
+#c1 {
+  border-right: 10px solid white;
+  opacity: 0.5;
+}
+
+#c2 {
+  border-right: 10px solid white;
+  opacity: 0.5; 
+}
+
+#c3 {
+
+}
