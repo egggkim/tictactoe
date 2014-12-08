@@ -21,28 +21,55 @@
 
 <body>
 
-  <header>
-    <h1>tictactoe</h1>
-  </header>
+<!-- ================= LEFT COLUMN ================= -->
+ 
+  <div class="left">
 
-<!-- ================= GAMEBOARD  ================= -->
+    <section id="user1">
+      
+    <h2>USER1 NAME</h2>
 
-  <div class="grid">
-
-    <div class ="square" id="a1"></div>
-    <div class ="square" id="a2"></div>
-    <div class ="square" id="a3"></div>
-
-    <div class ="square" id="b1"></div>
-    <div class ="square" id="b2"></div>
-    <div class ="square" id="b3"></div> 
-
-    <div class ="square" id="c1"></div>
-    <div class ="square" id="c2"></div>
-    <div class ="square" id="c3"></div>  
+    </section>
 
   </div>
 
+<!-- ================= GAMEBOARD // MIDDLE COLUMN ================= -->
+
+  <div class="gameboard" ng-model="write something here thank you">
+
+    <div class ="square" id="a1"> {{ userChoice }} </div>
+    <div class ="square" id="a2"> {{ userChoice }} </div>
+    <div class ="square" id="a3"> {{ userChoice }} </div>
+
+    <div class ="square" id="b1"> {{ userChoice }} </div>
+    <div class ="square" id="b2"> {{ userChoice }} </div>
+    <div class ="square" id="b3"> {{ userChoice }} </div> 
+
+    <div class ="square" id="c1"> {{ userChoice }} </div>
+    <div class ="square" id="c2"> {{ userChoice }} </div>
+    <div class ="square" id="c3"> {{ userChoice }} </div>  
+
+  </div>
+
+<!-- ================= RIGHT COLUMN ================= -->
+
+  <div class="right">
+
+    <section id="user2">
+      
+     <h2>USER2 NAME</h2>
+
+    </section>
+
+  </div>
+
+<!-- ================= FOOTER ================= -->
+
+  <footer>
+
+    <p id="footerText">First project in progress..!</p>
+
+  </footer>
 
 </body>
 
