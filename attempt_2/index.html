@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>tic tac toez</title>
+
+  <link rel="stylesheet" type="text/css" href="css/reset.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js"></script>
+  <script src="https://cdn.firebase.com/js/client/2.0.4/firebase.js"></script>
+  <script src="https://cdn.firebase.com/libs/angularfire/0.9.0/angularfire.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/GameController.js"></script>
+  <script src="js/gameBoard.js"></script>
+
+</head>
+
+<body ng-app='gameApp'>  
+
+  <div id="container">
+  <!-- =============== LEFT COLUMN, USER 1 ============= -->
+    <div id="user-1">
+      
+    </div>
+
+  <!-- =========== MIDDLE COLUMN, GAMEBOARD ============ -->
+    <div id="game-board" ng-controller="GameController as game">
+
+      <div class="square" id="square1" ng-click="game.clickCount()">a1</div>
+      <div class="square" ng-click="game.userChoice()">b1</div>
+      <div class="square" ng-click="game.userChoice()">c1</div>
+
+      <div class="square" ng-click="game.userChoice()">a2</div>
+      <div class="square" ng-click="game.userChoice()">b2</div>
+      <div class="square" ng-click="game.userChoice()">c2</div>
+
+      <div class="square" ng-click="game.userChoice()">a3</div>
+      <div class="square" ng-click="game.userChoice()">b3</div>
+      <div class="square" ng-click="game.userChoice()">c3</div>
+
+    </div>
+
+  <!-- ============= RIGHT COLUMN, USER 2 ============== -->
+    <div id="user-2">
+      
+    </div>
+
+  </div>
+
+</body>
+</html>
