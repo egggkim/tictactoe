@@ -1,18 +1,25 @@
-body {
+body{
   text-align: center;
 }
 
-#container {
+#container{
   width: 900px;
-    border: 1px solid blue;
   text-align: center;
   margin: 0 auto;
 }
 
-#game-piece {
+#game-piece{
   width: 100px;
   height: 100px;
     border: 1px solid black;
   margin: 10px;
   display: inline-block;
+}
+
+#results-display{
+
+}
+
+.playerClicked{
+  border: 1px solid black;
 }
