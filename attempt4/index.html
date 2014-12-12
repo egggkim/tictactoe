@@ -13,11 +13,15 @@
 <body ng-controller="tttsController as ttt">
   <h2>tic tac toe</h2>
 
-  <div id="popup"></div>
+<!--   <div id="popup">
+    <h4>Welcome to the game! Please enter your username to begin</h4>
+    <input class="input" type="text" placeholder="Enter your username" ng-model="name" /> <br><br>
+    <button class="input" ng-click="ttt.playerObj()">Play!</button>
+  </div> -->
 
 <!-- ============= game board with 9 tiles ============= -->
   <div class="game-container">
-    <div class="game-board" ng-repeat="boardSquare in ttt.boardSquareList track by $index" ng-model="boardSquare.playerClicked" ng-click="ttt.playerTurn($index); ttt.tileSelect($index)">
+    <div class="game-board" ng-repeat="boardSquare in ttt.boardSquareList track by $index" ng-model="boardSquare.playerClicked" ng-click="ttt.playerTurn($index)">
       {{ boardSquare.playerClicked }}
     </div>
   </div>
@@ -27,14 +31,12 @@
   <div class="scoreboard">
     <section id="player1">
       <h3 ng-bind="name">Player 1</h3>
-      <h4>{#} games won</h4>
-      <input class="username" type="text" placeholder="enter your username"  ng-model="name"/>
+      <h5>{#} games won</h5>
     </section>
 
     <section id="player2">
       <h3 ng-bind="name2">Player 2</h3>   
-      <h4>{#} games won</h4> 
-      <input class="username" type="text" placeholder="enter your username" ng-model="name2"/>   
+      <h5>{#} games won</h5> 
     </section>
   </div>
 
