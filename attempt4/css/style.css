@@ -1,0 +1,90 @@
+body{
+  text-align: center;
+  font-family: "shithead";
+  background-color: #ecf8ff;
+  color: #868686;
+}
+
+h2{
+  font-size: 50px;
+  margin: 0px;
+}
+
+.game-container{
+  width: 400px;
+  height: 400px;
+  margin: 0 auto;
+}
+
+.game-board{
+  width: 110px;
+  height: 110px;
+
+  margin: 7px;
+  margin-top: 18px;
+
+  display: inline-block;
+  line-height: 100px;
+
+  background-color: white;
+
+  border-radius: 30px;
+  box-shadow: 7px 7px 5px -3px #466181;
+
+  font-size: 100px;
+}
+
+.game-board:active{
+  box-shadow: inset 7px 7px 5px -3px #466181;
+}
+
+.scoreboard{
+  width: 600px;
+  height: 200px;
+  margin: 0 auto;
+
+  position: relative;
+  top: 20px;
+}
+
+#player1, #player2{
+  display: inline-block;
+  text-align: center;
+  width: 40%;
+  height: 140px;
+  margin: 10px 10px;
+  border-radius: 20px;
+  background-color: #fff3f3;
+
+  text-align: center;
+
+  box-shadow: 4px 4px 5px -3px #466181;
+}
+
+h3{
+  text-align: center;
+  font-family: existence;
+}
+
+.username{
+  width: 130px;
+  height: 15px;
+
+  text-align: center;
+  font-family: existence;
+  border-radius: 20px;
+}
+/*#popup
+{
+  width: 500px;
+  height: 300px;
+  position: absolute;
+  /* border: 1px solid black; */
+/*  border-radius: 12px;
+  left: 50%;
+  top: 50%;
+  margin-left: -250px;
+  margin-top: -150px;
+  background-color: wheat;
+}
+*/

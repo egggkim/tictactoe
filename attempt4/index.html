@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app="tttApp">
+<head>
+  <title>tic tac toe</title>
+
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  
+  <script src="js/angular.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/tttsController.js"></script>
+</head>
+
+<body ng-controller="tttsController as ttt">
+  <h2>tic tac toe</h2>
+
+  <div id="popup"></div>
+
+<!-- ============= game board with 9 tiles ============= -->
+  <div class="game-container">
+    <div class="game-board" ng-repeat="boardSquare in ttt.boardSquareList track by $index" ng-model="boardSquare.playerClicked" ng-click="ttt.playerTurn($index); ttt.tileSelect($index)">
+      {{ boardSquare.playerClicked }}
+    </div>
+  </div>
+
+
+<!-- ===== scoreboard display with user name input ======= -->
+  <div class="scoreboard">
+    <section id="player1">
+      <h3 ng-bind="name">Player 1</h3>
+      <h4>{#} games won</h4>
+      <input class="username" type="text" placeholder="enter your username"  ng-model="name"/>
+    </section>
+
+    <section id="player2">
+      <h3 ng-bind="name2">Player 2</h3>   
+      <h4>{#} games won</h4> 
+      <input class="username" type="text" placeholder="enter your username" ng-model="name2"/>   
+    </section>
+  </div>
+
+</body>
+</html>
