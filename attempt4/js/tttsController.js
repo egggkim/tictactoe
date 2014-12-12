@@ -5,6 +5,7 @@ angular
 function tttsController(){
 
   var self = this;
+  self.winningMessage = " ";
 
   self.boardSquareList  = [
     {playerClicked: " "},
@@ -51,63 +52,43 @@ function tttsController(){
         self.currentPlayer = 1;
       }
     }
-    else {
-      console.log("fix playerTurn function");
-    }
 
-    rowCheck();
-    columnCheck();
+
+    checkRows();
+    checkColumns();
     diagonalCheck();
   }
 
-  function rowCheck(){
-    if(
-      // checks first row
-      (self.boardSquareList[0].playerClicked === self.boardSquareList[1].playerClicked === self.boardSquareList[2].playerClicked) ||
-      // checks second row
-      (self.boardSquareList[3].playerClicked === self.boardSquareList[4].playerClicked === self.boardSquareList[5].playerClicked) ||
-      // checks third row
-      (self.boardSquareList[6].playerClicked === self.boardSquareList[7].playerClicked === self.boardSquareList[8].playerClicked)){
-      console.log("somebody won a row");
-    }
+  function checkLine(index1, index2, index3){
+    var arr = self.boardSquareList;
+    var letter1 = "x";
+    var letter2 =  "o";
 
-    else{
-      console.log("fix your row check");
+    var line = arr[index1].playerClicked + arr[index2].playerClicked + arr[index3].playerClicked;
+    if (line === letter1 + letter1 + letter1){
+      console.log(letter1 + " won");
+      self.winningMessage = letter1 + " won";
+    }
+    else if (line === letter2 + letter2 + letter2){
+      console.log(letter2 +" won");
+      self.winningMessage = letter2 + " won";
     }
   }
 
-  function columnCheck(){
-    if(
-      // checks first column
-      (self.boardSquareList[0].playerClicked === self.boardSquareList[3].playerClicked) && 
-      (self.boardSquareList[3].playerClicked === self.boardSquareList[6].playerClicked) ||
-      // checks second column
-      (self.boardSquareList[1].playerClicked === self.boardSquareList[4].playerClicked) && 
-      (self.boardSquareList[7].playerClicked === self.boardSquareList[7].playerClicked) ||
-      // checks third column
-      (self.boardSquareList[2].playerClicked === self.boardSquareList[5].playerClicked) && 
-      (self.boardSquareList[5].playerClicked === self.boardSquareList[8].playerClicked)){
-       console.log("somebody won a column");
-    }
-    else {
-      console.log("fix your column check");
-    }
+  function checkRows(){
+    checkLine(0, 1, 2);
+    checkLine(3, 4, 5);
+    checkLine(6, 7, 8);
   }
 
+  function checkColumns(){
+    checkLine(0, 3, 6);
+    checkLine(1, 4, 7);
+    checkLine(2, 5, 8);
+  }
   function diagonalCheck(){
-    if(
-    // checks left to right diagonal 
-      (self.boardSquareList[0].playerClicked === self.boardSquareList[4].playerClicked) && 
-      (self.boardSquareList[4].playerClicked === self.boardSquareList[8].playerClicked) ||
-      // checks right to left diagonal 
-      (self.boardSquareList[2].playerClicked === self.boardSquareList[4].playerClicked) && 
-      (self.boardSquareList[4].playerClicked === self.boardSquareList[6].playerClicked)){
-    console.log("somebody won a diagonal");
-    }
-
-    else{
-      console.log("fix your diagonal check");
-    }
+    checkLine(0, 4, 8);
+    checkLine(2, 4, 6);
   }
 
 
@@ -148,11 +129,11 @@ function tttsController(){
       // console.log("player wins")}
 
 
-      // function rowCheck(){
+      // function checkRows(){
       //   if boardSquareList[i]
       // }
 
-      // function columnCheck(){
+      // function checkColumns(){
 
       // }
 
