@@ -5,6 +5,7 @@ angular
 function tttsController(){
 
   var self = this;
+
   self.winningMessage = " ";
 
   self.boardSquareList  = [
@@ -21,13 +22,8 @@ function tttsController(){
     {playerClicked: " "}
   ];
 
-  // self.gameBoard        = getBoardSquareList();
-  // self.playerObj        = playerObj; 
+  // self.gameBoard     = getBoardSquareList();
   self.playerTurn       = playerTurn;
-  // self.tileSelect       = tileSelect;
-  // self.selectionDisplay = document.getElementById("testing");
-  // self.checkWin         = checkWin;
-  // self.addPlayer        = addPlayer;
   self.currentPlayer    = 1; 
 
   // function getBoardSquareList(){
@@ -42,73 +38,86 @@ function tttsController(){
   //   document.getElementById("popup").style.display = 'none';
 
   function playerTurn($index){
-    if (self.boardSquareList[$index].playerClicked = " "){
+
+    if (self.boardSquareList[$index].playerClicked === " "){
+
       if (self.currentPlayer === 1){
         self.boardSquareList[$index].playerClicked = "x";
         self.currentPlayer = 2;
       }
+
       else {
         self.boardSquareList[$index].playerClicked = "o";
         self.currentPlayer = 1;
       }
-    }
 
+    }
 
     checkRows();
     checkColumns();
-    diagonalCheck();
+    checkDiagonals();
   }
 
-  function checkLine(index1, index2, index3){
-    var arr = self.boardSquareList;
-    var letter1 = "x";
-    var letter2 =  "o";
+  // function clearBoard(){
+  //   self.boardSquareList  = [
+  //   {playerClicked: " "},
+  //   {playerClicked: " "},
+  //   {playerClicked: " "},
 
-    var line = arr[index1].playerClicked + arr[index2].playerClicked + arr[index3].playerClicked;
-    if (line === letter1 + letter1 + letter1){
+  //   {playerClicked: " "},
+  //   {playerClicked: " "},
+  //   {playerClicked: " "},
+
+  //   {playerClicked: " "},
+  //   {playerClicked: " "},
+  //   {playerClicked: " "}
+  // ];
+  // }
+
+  function checkWin(index1, index2, index3){
+    var arr          = self.boardSquareList;
+    var letter1      = "x";
+    var letter2      = "o";
+    var line         = arr[index1].playerClicked + arr[index2].playerClicked + arr[index3].playerClicked;
+    var xWinScenario = (line === letter1 + letter1 + letter1);
+    var oWinScenario = (line === letter2 + letter2 + letter2);
+
+    if (xWinScenario){
       console.log(letter1 + " won");
       self.winningMessage = letter1 + " won";
-    }
-    else if (line === letter2 + letter2 + letter2){
+      // clearBoard();
+      }
+
+
+    else if (oWinScenario){
       console.log(letter2 +" won");
       self.winningMessage = letter2 + " won";
+      // clearBoard();     
     }
+
+    // else if (){
+    //   self.winningMessage = "Cat's game";
+    // }
+
   }
 
   function checkRows(){
-    checkLine(0, 1, 2);
-    checkLine(3, 4, 5);
-    checkLine(6, 7, 8);
+    checkWin(0, 1, 2);
+    checkWin(3, 4, 5);
+    checkWin(6, 7, 8);
   }
 
   function checkColumns(){
-    checkLine(0, 3, 6);
-    checkLine(1, 4, 7);
-    checkLine(2, 5, 8);
-  }
-  function diagonalCheck(){
-    checkLine(0, 4, 8);
-    checkLine(2, 4, 6);
+    checkWin(0, 3, 6);
+    checkWin(1, 4, 7);
+    checkWin(2, 5, 8);
   }
 
-
-  // function tieCondition(){
-  //   console.log("checking tie condition")
-  // }
-
-  // function currentPlayer(){
-  //   if (self.currentPlayer == 1){
-  //     self.currentPlayer == 0;
-  //   }
-  //   else {
-  //     self.currentPlayer ==1;
-  //   }
-  // }
-
-  function tileSelect($index){
-    console.log(self.boardSquareList);
-    console.log("a tile has been selected");
+  function checkDiagonals(){
+    checkWin(0, 4, 8);
+    checkWin(2, 4, 6);
   }
+
 
   // function addPlayer(newPlayerObj){
   //   self.boardSquareList.$add(newPlayerObj);
@@ -137,7 +146,7 @@ function tttsController(){
 
       // }
 
-      // function diagonalCheck(){
+      // function checkDiagonals(){
 
       // }
 
