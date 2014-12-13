@@ -2,7 +2,11 @@ angular
   .module("tttApp")
   .controller("tttsController", tttsController);
 
-function tttsController(){
+tttsController.$inject = ['$firebase'];
+
+function tttsController($firebase){
+
+  var ref = new Firebase("https://tic--tac--toe.firebaseio.com/");
 
   var self = this;
 
@@ -37,6 +41,13 @@ function tttsController(){
   //     console.log("playerObj function connected");
   //   document.getElementById("popup").style.display = 'none';
 
+  function hotFire () {
+    self.game = $firebase(ref).$asObject();
+    self.game.boardSquareList = self.boardSquareList;
+    self.game.$save();
+  }
+
+
   function playerTurn($index){
 
     if (self.boardSquareList[$index].playerClicked === " "){
@@ -56,7 +67,9 @@ function tttsController(){
     checkRows();
     checkColumns();
     checkDiagonals();
+    hotFire();
   }
+
 
   // function clearBoard(){
   //   self.boardSquareList  = [
