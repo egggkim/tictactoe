@@ -6,11 +6,10 @@ tttsController.$inject = ['$firebase'];
 
 function tttsController($firebase){
 
-  var ref = new Firebase("https://tic--tac--toe.firebaseio.com/");
+  var ref  = new Firebase("https://tic--tac--toe.firebaseio.com/");
   var self = this;
 
-  self.winningMessage = " ";
-// written as object since firebase will store as object anyway
+  self.winningMessage   = " ";
   self.boardSquareList  = [
     {playerClicked: " "},
     {playerClicked: " "},
@@ -24,25 +23,17 @@ function tttsController($firebase){
     {playerClicked: " "},
     {playerClicked: " "}
   ];
+  self.playerTurn    = playerTurn;
+  self.currentPlayer = 1;
+  self.clearBoard    = clearBoard; 
 
-  self.playerTurn       = playerTurn;
-  self.currentPlayer    = 1;
-  self.clearBoard       = clearBoard; 
-
-  // function getBoardSquareList(){
-  //   var ref = new Firebase("https://tic--tac--toe.firebaseio.com/");
-  //   return $firebase(ref).$asArray();
-  // }
-  // self.gameBoard$save();
-
-  function hotFire(){
-    self.game = $firebase(ref).$asObject();
+  function getBoardSquareList(){
+    self.game                 = $firebase(ref).$asObject();
     self.game.boardSquareList = self.boardSquareList;
     self.game.$save();
   }
 
-
-  // called when player clicks game-board 
+  // called when any player clicks game-board 
   function playerTurn($index){
 
     if (self.boardSquareList[$index].playerClicked === " "){
@@ -57,15 +48,15 @@ function tttsController($firebase){
         self.boardSquareList[$index].playerClicked = "o";
         self.currentPlayer = 1;
       }
-
+      
     }
 
     // invoke the following functions on each game-board click 
-    hotFire();
+    getBoardSquareList();
     checkRows();
     checkColumns();
     checkDiagonals();
-    // checkPuppies();
+    // everyTest();
   }
 
   // references all the data that will be used in three win logic functions below 
@@ -78,12 +69,10 @@ function tttsController($firebase){
     var oWinScenario = (line === letter2 + letter2 + letter2);
 
     if (xWinScenario){
-      console.log(letter1 + " won");
       self.winningMessage = letter1 + " won";
       }
 
     else if (oWinScenario){
-      console.log(letter2 +" won");
       self.winningMessage = letter2 + " won";
     }
 
@@ -106,6 +95,10 @@ function tttsController($firebase){
     checkWin(2, 4, 6);
   }
 
+  function checkCats(){
+    console.log("checking cats")
+  }
+
   // function checkPuppies(){
   //   for (var i = 0; i < self.boardSquareList.length; i++){
   //     if (self.boardSquareList[i].playerclicked != " " && !xWinScenario && !oWinScenario){
@@ -114,18 +107,7 @@ function tttsController($firebase){
   //   }
   // }
 
-  // function funcion(){
-  //   if (xWinScenario){
-  //     console.log("x won is true");
-  //   }
-  //   else if (oWinScenario){
-  //     console.log("o won is true");
-  //   }
-  //   funcion();
-  // }
-
   function clearBoard(){
-    // self.boardSquareList  = self.boardSquareList;
     for (var i = 0; i < self.boardSquareList.length; i++){
     self.boardSquareList[i].playerClicked = " ";
     self.winningMessage = " ";
