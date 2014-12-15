@@ -6,7 +6,6 @@ tttsController.$inject = ['$firebase'];
 
 function tttsController($firebase){
 
-  var ref  = new Firebase("https://tic--tac--toe.firebaseio.com/");
   var self = this;
 
   self.winningMessage   = " ";
@@ -23,14 +22,32 @@ function tttsController($firebase){
     {playerClicked: " "},
     {playerClicked: " "}
   ];
+  self.playersList   = getPlayersList();
+  self.addPlayer     = addPlayer;
   self.playerTurn    = playerTurn;
   self.currentPlayer = 1;
   self.clearBoard    = clearBoard; 
 
+  // connection to firebase, loads gameboard to browser
   function getBoardSquareList(){
+    var ref                   = new Firebase("https://tic--tac--toe.firebaseio.com/");
     self.game                 = $firebase(ref).$asObject();
     self.game.boardSquareList = self.boardSquareList;
     self.game.$save();
+  }
+
+  // connection to firebase, loads player object 
+  function getPlayersList(){
+    var ref = new Firebase("https://tic--tac--toe.firebaseio.com/players");
+    var users = $firebase(ref).$asArray();
+
+    return users;
+  }
+
+  function addPlayer(newUser){
+    self.playersList.$add(newUser);
+    self.newUser = null;
+
   }
 
   // called when any player clicks game-board 
@@ -56,7 +73,6 @@ function tttsController($firebase){
     checkRows();
     checkColumns();
     checkDiagonals();
-    // everyTest();
   }
 
   // references all the data that will be used in three win logic functions below 
@@ -69,11 +85,11 @@ function tttsController($firebase){
     var oWinScenario = (line === letter2 + letter2 + letter2);
 
     if (xWinScenario){
-      self.winningMessage = letter1 + " won";
+      self.winningMessage = letter1 + " wins!";
       }
 
     else if (oWinScenario){
-      self.winningMessage = letter2 + " won";
+      self.winningMessage = letter2 + " wins!";
     }
   }
 
@@ -113,16 +129,6 @@ function tttsController($firebase){
     }
   }
 
-  var ref = new Firebase("https://tic--tac--toe.firebaseio.com/players");
-  var playersRef = ref.child("players");
-    playersRef.set({
-    player1: {
-      username: "null",
-    },
-    player2: {
-      username: "undefined",
-    }
-  });
 
 
   // function addPlayer(newPlayerObj){

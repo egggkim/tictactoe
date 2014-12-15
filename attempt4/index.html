@@ -13,21 +13,9 @@
 </head>
 
 <body ng-controller="tttsController as ttt">
-  <h2>tic tac toe</h2>
+  <h1>tic tac toe</h1>
 
-  <h3>{{ ttt.winningMessage }}</h3>
-    <!--   <div id="popup">
-      <h4>Welcome to the game! Please enter your username to begin</h4>
-      <input class="input" type="text" placeholder="Enter your username" ng-model="name" /> <br><br>
-      <button class="input" ng-click="ttt.playerObj()">Play!</button>
-    </div> -->
-
-  <div>
-    <h4>Players:</h4>
-    <form ng-submit="ttt.addPlayer(ttt.newPlayer)">
-      <input type="text" ng-model="ttt.newPlayer.name" placeholder="Add your player name" />
-    </form>
-  </div>
+  <h2>{{ ttt.winningMessage }}</h2>
 
 <!-- game board with 9 tiles -->
   <div class="game-container">
@@ -44,18 +32,31 @@
 
   </div>
 
+<!-- assigning player names -->
+  <h4>Players:</h4>
+
+  <div class="player" ng-repeat="user in ttt.playersList">
+    <input type="text" ng-model="user.name" ng-change="ttt.playersList.$save(user)">
+  </div>
+
+  <div>
+    <form ng-submit="ttt.addPlayer(ttt.newUser)">
+      <input type="text" ng-model="ttt.newUser.name" placeholder="Enter your name"/>
+    </form>
+  </div>
+
 <!-- scoreboard display with user name input -->
   <div class="scoreboard">
 
     <!-- scoreboard player 1 -->
     <section id="player1">
-      <h3 ng-bind="name">Player 1</h3>
+      <h3 ng-bind="user.name">{{user.na}}</h3>
       <h5>{#} games won</h5>
     </section>
 
     <!-- scoreboard player 2 -->
     <section id="player2">
-      <h3 ng-bind="name2">Player 2</h3>   
+      <h3 ng-bind="user.name">Player 2</h3>   
       <h5>{#} games won</h5> 
     </section>
 
