@@ -24,22 +24,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.38" vertical-offset="246" max-vertical-offset="1065">
-              <caret line="41" column="7" selection-start-line="41" selection-start-column="7" selection-end-line="41" selection-end-column="7" />
+            <state vertical-scroll-proportion="0.70128024" vertical-offset="377" max-vertical-offset="1170">
+              <caret line="58" column="19" selection-start-line="58" selection-start-column="19" selection-end-line="58" selection-end-column="19" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tttsController.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="tttsController.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/tttsController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.28885832" vertical-offset="315" max-vertical-offset="2670">
-              <caret line="35" column="86" selection-start-line="35" selection-start-column="86" selection-end-line="35" selection-end-column="86" />
-              <folding />
+            <state vertical-scroll-proportion="-21.346153" vertical-offset="915" max-vertical-offset="2340">
+              <caret line="98" column="27" selection-start-line="98" selection-start-column="27" selection-end-line="98" selection-end-column="27" />
+              <folding>
+                <marker date="1418619821000" expanded="true" signature="746:828" placeholder="{...}" />
+                <marker date="1418619821000" expanded="true" signature="941:1141" placeholder="{...}" />
+                <marker date="1418619821000" expanded="true" signature="1172:1344" placeholder="{...}" />
+                <marker date="1418619821000" expanded="true" signature="1568:1976" placeholder="{...}" />
+                <marker date="1418619821000" expanded="true" signature="1843:1919" placeholder="{...}" />
+                <marker date="1418619821000" expanded="true" signature="2240:2766" placeholder="{...}" />
+                <marker date="1418619821000" expanded="true" signature="2601:2683" placeholder="{...}" />
+                <marker date="1418619821000" expanded="true" signature="3058:3094" placeholder="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -49,8 +58,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/tttsController.js" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -217,18 +226,27 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/js/tttsController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.38" vertical-offset="246" max-vertical-offset="1065">
-          <caret line="41" column="7" selection-start-line="41" selection-start-column="7" selection-end-line="41" selection-end-column="7" />
-          <folding />
+        <state vertical-scroll-proportion="-21.346153" vertical-offset="915" max-vertical-offset="2340">
+          <caret line="98" column="27" selection-start-line="98" selection-start-column="27" selection-end-line="98" selection-end-column="27" />
+          <folding>
+            <marker date="1418619821000" expanded="true" signature="746:828" placeholder="{...}" />
+            <marker date="1418619821000" expanded="true" signature="941:1141" placeholder="{...}" />
+            <marker date="1418619821000" expanded="true" signature="1172:1344" placeholder="{...}" />
+            <marker date="1418619821000" expanded="true" signature="1568:1976" placeholder="{...}" />
+            <marker date="1418619821000" expanded="true" signature="1843:1919" placeholder="{...}" />
+            <marker date="1418619821000" expanded="true" signature="2240:2766" placeholder="{...}" />
+            <marker date="1418619821000" expanded="true" signature="2601:2683" placeholder="{...}" />
+            <marker date="1418619821000" expanded="true" signature="3058:3094" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/tttsController.js">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28885832" vertical-offset="315" max-vertical-offset="2670">
-          <caret line="35" column="86" selection-start-line="35" selection-start-column="86" selection-end-line="35" selection-end-column="86" />
+        <state vertical-scroll-proportion="0.70128024" vertical-offset="377" max-vertical-offset="1170">
+          <caret line="58" column="19" selection-start-line="58" selection-start-column="19" selection-end-line="58" selection-end-column="19" />
           <folding />
         </state>
       </provider>

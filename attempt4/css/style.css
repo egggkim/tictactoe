@@ -63,7 +63,7 @@ button:active{
 }
 
 .scoreboard{
-  width: 600px;
+  width: 900px;
   height: 200px;
   margin: 0 auto;
 
@@ -71,10 +71,10 @@ button:active{
   top: 20px;
 }
 
-#player1, #player2{
+#player1, #player2, #ties{
   display: inline-block;
   text-align: center;
-  width: 40%;
+  width: 30%;
   height: 140px;
   margin: 10px 10px;
   border-radius: 20px;

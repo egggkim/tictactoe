@@ -15,6 +15,29 @@
 <body ng-controller="tttsController as ttt">
   <h1>tic tac toe</h1>
 
+<!-- scoreboard display with user name input -->
+  <div class="scoreboard">
+
+    <!-- scoreboard player 1 -->
+    <section id="player1">
+      <h2>Wins</h2>
+      <h3>Player X: {{ttt.scoreBoard.xWins}}</h3>
+    </section>
+
+    <!-- scoreboard player 1 -->
+    <section id="ties">
+      <h2>Ties</h2>
+      <h3>{{ttt.scoreBoard.ties}}</h3>
+    </section>
+
+    <!-- scoreboard player 2 -->
+    <section id="player2">
+      <h2>Wins</h2>    
+      <h3>Player O: {{ttt.scoreBoard.oWins}}</h3>
+    </section>
+
+  </div>
+
   <h2>{{ ttt.winningMessage }}</h2>
 
 <!-- game board with 9 tiles -->
@@ -43,23 +66,6 @@
     <form ng-submit="ttt.addPlayer(ttt.newUser)">
       <input type="text" ng-model="ttt.newUser.name" placeholder="Enter your name"/>
     </form>
-  </div>
-
-<!-- scoreboard display with user name input -->
-  <div class="scoreboard">
-
-    <!-- scoreboard player 1 -->
-    <section id="player1">
-      <h2>Wins</h2>
-      <h3>Player X: {{ttt.scoreBoard.xWins}}</h3>
-    </section>
-
-    <!-- scoreboard player 2 -->
-    <section id="player2">
-      <h2>Wins</h2>    
-      <h3>Player O: {{ttt.scoreBoard.oWins}}</h3>
-    </section>
-
   </div>
 
 </body>

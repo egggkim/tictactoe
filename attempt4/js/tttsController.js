@@ -27,9 +27,14 @@ function tttsController($firebase){
   self.playerTurn    = playerTurn;
   self.currentPlayer = 1;
   self.clearBoard    = clearBoard; 
-  self.scoreBoard    = {xWins: 0, oWins: 0, ties: 0};
+  self.scoreBoard    = {
+    xWins: 0, 
+    oWins: 0, 
+    ties : 0
+  };
   self.playerOne     = self.playerOne;
   self.playerTwo     = self.playerTwo;
+  self.clickCount    = 0;
 
   // connection to firebase, loads gameboard to browser
   function getBoardSquareList(){
@@ -50,7 +55,6 @@ function tttsController($firebase){
   function addPlayer(newUser){
     self.playersList.$add(newUser);
     self.newUser = null;
-
   }
 
   // called when any player clicks game-board 
@@ -62,17 +66,17 @@ function tttsController($firebase){
       if (self.currentPlayer === 1){
         self.boardSquareList[$index].playerClicked = "x";
         self.currentPlayer = 2;
+        self.clickCount++;
       }
 
       else {
         self.boardSquareList[$index].playerClicked = "o";
         self.currentPlayer = 1;
+        self.clickCount++;
       }
-      
     }
 
     // invoke the following functions on each game-board click 
-    getBoardSquareList();
     checkRows();
     checkColumns();
     checkDiagonals();
@@ -89,12 +93,16 @@ function tttsController($firebase){
 
     if (xWinScenario){
       self.winningMessage = letter1 + " wins!";
-      self.scoreBoard.xWins++
+      self.scoreBoard.xWins++;
       }
 
     else if (oWinScenario){
       self.winningMessage = letter2 + " wins!";
-      self.scoreBoard.oWins++
+      self.scoreBoard.oWins++;
+    }
+
+    else{
+      checkCats();
     }
   }
 
@@ -116,21 +124,17 @@ function tttsController($firebase){
   }
 
   function checkCats(){
-    console.log("checking cats")
+    if (self.clickCount === 9){
+      self.winningMessage = "tie game!";
+      self.scoreBoard.ties++;
+    }
   }
-
-  // function checkPuppies(){
-  //   for (var i = 0; i < self.boardSquareList.length; i++){
-  //     if (self.boardSquareList[i].playerclicked != " " && !xWinScenario && !oWinScenario){
-  //     self.winningMessage = "puppy's game";
-  //     }
-  //   }
-  // }
 
   function clearBoard(){
     for (var i = 0; i < self.boardSquareList.length; i++){
     self.boardSquareList[i].playerClicked = " ";
     self.winningMessage = " ";
+    self.clickCount = 0;
     }
   }
 
@@ -145,26 +149,6 @@ function tttsController($firebase){
       return "Player 2";
     }
   }
-
-
-  // function getChatLog() {
-  //   // var presidents = [
-  //   //   {name: "George Washington"},
-  //   //   {name: "Thomas Jefferson"},
-  //   //   {name: "Daniel Willhelm"}
-  //   // ]
-
-  //   var ref = new Firebase("https://gov.firebaseio.com/chat"); 
-  //   var chat = $firebase(ref).$asArray();
-  //   // above, $firebase refers to the library we linked in index.html and passes in the url to our firebase created link and passing it as a method $asArray (this is provided in angularfire)
-  //   return chat;
-  // }
-
-  // function addMessage(newMessage) {
-  //   this.messageList.$add(newMessage);
-  //   this.newMessage = null;
-
-  // }
 
   }
 
