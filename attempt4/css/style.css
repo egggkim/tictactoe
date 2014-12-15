@@ -69,19 +69,22 @@ h2{
 
   background-color: white;
 
+  font-size: 100px;
+
   border-radius: 30px;
   box-shadow: 7px 7px 5px -3px #849b6d;
 
-  font-size: 100px;
-
-  transition-property: background;
-  transition-duration: 0.5s;
-  transition-timing-function: linear;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
 }
 
 .game-board:hover {
-  background: #8ca474;
-  color: white;
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .game-board:active{
@@ -90,7 +93,9 @@ h2{
 }
 
 .restart{
-  width: 420px;
+  width: 100px;
+  height: 15px;
+  margin-top: 15px;
 }
 
 button{
@@ -114,12 +119,6 @@ button:active{
   box-shadow: inset 7px 7px 5px -3px #849b6d;
 }
 
-.restart{
-  width: 100px;
-  height: 15px;
-  margin-top: 20px;
-}
-
 .username{
   width: 130px;
   height: 15px;
@@ -133,40 +132,6 @@ button:active{
   display: block;
   vertical-align: top;
 
-}
-
-label { 
-  display:block; margin: 1em; 
-}
-
-input {
-  display: inline-block;
-  padding: 0.382em;
-  border: none;
-  font-family: 'Amatic SC', cursive;
-  font-size: 16px; 
-  font-style: italic; 
-  margin: 0;
-}
-
-input:focus {
-  outline: none;
-}
-
-#popup{
-  width: 300px;
-  height: 350px;
-  position: fixed;
-  top: 100px;
-  left: 100px;
-
-  border-radius: 12px;
-  margin: 0 auto;
-  background-color: black;
-}
-
-input{
-  width: 150px;
 }
 
 .input{
