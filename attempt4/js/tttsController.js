@@ -8,8 +8,9 @@ function tttsController($firebase){
 
   var self = this;
 
-  self.winningMessage   = " ";
-  self.boardSquareList  = [
+  self.scoreBoard      = {xWins: 0, oWins: 0, ties : 0};
+  self.winningMessage  = " ";
+  self.boardSquareList = [
     {playerClicked: " "},
     {playerClicked: " "},
     {playerClicked: " "},
@@ -22,19 +23,13 @@ function tttsController($firebase){
     {playerClicked: " "},
     {playerClicked: " "}
   ];
-  self.playersList   = getPlayersList();
-  self.addPlayer     = addPlayer;
-  self.playerTurn    = playerTurn;
-  self.currentPlayer = 1;
-  self.clearBoard    = clearBoard; 
-  self.scoreBoard    = {
-    xWins: 0, 
-    oWins: 0, 
-    ties : 0
-  };
-  self.playerOne     = self.playerOne;
-  self.playerTwo     = self.playerTwo;
-  self.clickCount    = 0;
+  self.winningMessage = " ";
+  self.playersList    = getPlayersList();
+  self.addPlayer      = addPlayer;
+  self.playerTurn     = playerTurn;
+  self.currentPlayer  = 1;
+  self.clickCount     = 0;
+  self.clearBoard     = clearBoard; 
 
   // connection to firebase, loads gameboard to browser
   function getBoardSquareList(){
@@ -55,6 +50,7 @@ function tttsController($firebase){
   function addPlayer(newUser){
     self.playersList.$add(newUser);
     self.newUser = null;
+
   }
 
   // called when any player clicks game-board 
@@ -74,12 +70,11 @@ function tttsController($firebase){
         self.currentPlayer = 1;
         self.clickCount++;
       }
+      
     }
 
     // invoke the following functions on each game-board click 
-    checkRows();
-    checkColumns();
-    checkDiagonals();
+    checkResults();
   }
 
   // references all the data that will be used in three win logic functions below 
@@ -106,21 +101,27 @@ function tttsController($firebase){
     }
   }
 
-  function checkRows(){
-    checkWin(0, 1, 2);
-    checkWin(3, 4, 5);
-    checkWin(6, 7, 8);
-  }
+  function checkResults(){
+  // checks rows for wins
+  checkWin(0, 1, 2);
+  checkWin(3, 4, 5);
+  checkWin(6, 7, 8);
 
-  function checkColumns(){
-    checkWin(0, 3, 6);
-    checkWin(1, 4, 7);
-    checkWin(2, 5, 8);
-  }
+  // checks columns for wins
+  checkWin(0, 3, 6);
+  checkWin(1, 4, 7);
+  checkWin(2, 5, 8);
 
-  function checkDiagonals(){
-    checkWin(0, 4, 8);
-    checkWin(2, 4, 6);
+  // checks diagonals for wins
+  checkWin(0, 4, 8);
+  checkWin(2, 4, 6);
+}
+
+  function clearBoard(){
+    for (var i = 0; i < self.boardSquareList.length; i++){
+    self.boardSquareList[i].playerClicked = " ";
+    self.winningMessage = " ";
+    }
   }
 
   function checkCats(){
@@ -129,28 +130,5 @@ function tttsController($firebase){
       self.scoreBoard.ties++;
     }
   }
-
-  function clearBoard(){
-    for (var i = 0; i < self.boardSquareList.length; i++){
-    self.boardSquareList[i].playerClicked = " ";
-    self.winningMessage = " ";
-    self.clickCount = 0;
-    }
-  }
-
-  function playerOne(){
-    if(self.playerOne === " "){
-      return "Player 1";
-    }
-  }
-
-  function playerTwo(){
-    if(self.playerTwo === " "){
-      return "Player 2";
-    }
-  }
-
 }
-
-
 

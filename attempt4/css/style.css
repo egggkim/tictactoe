@@ -7,37 +7,24 @@ body{
 }
 
 h1{
-  font-size: 100px;
+  font-size: 80px;
   margin-top: 20px;
 }
 
 .scoreboard{
   width: 900px;
-  height: 200px;
+  height: 170px;
   margin: 0 auto;
 
   position: relative;
   top: -10px;
 }
 
-h2{
-  font-size: 50px;
-  padding-top: 25px;
-}
-
-#win-message{
-  font-size: 50px;
-  margin-top: 50px;
-
-  display: inline-block;
-  vertical-align: top
-}
-
 #player1, #player2, #ties{
   display: inline-block;
   text-align: center;
-  width: 30%;
-  height: 100px;
+  width: 25%;
+  height: 50px;
   margin-right: 20px;
 
   position: relative;
@@ -48,6 +35,16 @@ h2{
   box-shadow: 4px 4px 5px -3px #d0aaaa;
 }
 
+h2{
+  font-size: 40px;
+  padding-top: 5px;
+}
+
+#win-message{
+  font-size: 50px;
+  margin-top: 60px;
+}
+
 .game-container{
   width: 420px;
   height: 490px;
@@ -55,6 +52,8 @@ h2{
   background-color: #d3e4c3;
   border-radius: 15px;  
   box-shadow: 5px 5px 5px -3px #849b6d;
+
+  margin-bottom: 100px;
 }
 
 .game-board{
@@ -65,7 +64,6 @@ h2{
 
   display: inline-block;
   vertical-align: top;
-  line-height: 100px;
 
   background-color: white;
 
@@ -150,5 +148,3 @@ h4 {
   position: relative;
   top: 40px;
 }
-
-

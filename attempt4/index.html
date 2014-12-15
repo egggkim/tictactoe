@@ -19,17 +19,17 @@
 <!-- scoreboard display with user name input -->
   <div class="scoreboard">
 
-    <!-- scoreboard player 1 -->
+    <!-- scoreboard left -->
     <section id="player1">
       <h2>Player 1 Wins: {{ttt.scoreBoard.xWins}}</h2>
     </section>
 
-    <!-- scoreboard player 1 -->
+    <!-- scoreboard middle -->
     <section id="ties">
       <h2>Ties: {{ttt.scoreBoard.ties}}</h2>
     </section>
 
-    <!-- scoreboard player 2 -->
+    <!-- scoreboard right -->
     <section id="player2">
       <h2>Player 2 Wins: {{ttt.scoreBoard.oWins}}</h2>    
     </section>
@@ -48,21 +48,20 @@
 
     <!-- restart button -->
     <div class="restart">
-      <button ng-click="ttt.clearBoard()">Play a New Game</button>
+      <button ng-click="ttt.clearBoard()">Play again</button>
     </div>
 
   </div>
 
 <!-- assigning player names -->
   <h4>Players:</h4>
-
   <div class="player" ng-repeat="user in ttt.playersList">
     <input type="text" ng-model="user.name" ng-change="ttt.playersList.$save(user)">
   </div>
-
+  
   <div>
     <form ng-submit="ttt.addPlayer(ttt.newUser)">
-      <input type="text" ng-model="ttt.newUser.name" placeholder="Enter your name"/>
+      <input type="text" ng-model="ttt.newUser.name" placeholder="Enter your name"  />
     </form>
   </div>
 
