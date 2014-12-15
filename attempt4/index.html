@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html ng-app="tttApp">
+
 <head>
   <title>tic tac toe</title>
-
+  <link href='http://fonts.googleapis.com/css?family=Amatic+SC:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="css/reset.css">
   <link rel="stylesheet" type="text/css" href="css/style.css">
-
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js"></script>
   <script src="https://cdn.firebase.com/js/client/2.0.4/firebase.js"></script>
   <script src="https://cdn.firebase.com/libs/angularfire/0.9.0/angularfire.min.js"></script>
@@ -20,25 +21,22 @@
 
     <!-- scoreboard player 1 -->
     <section id="player1">
-      <h2>Wins</h2>
-      <h3>Player X: {{ttt.scoreBoard.xWins}}</h3>
+      <h2>Player 1 Wins: {{ttt.scoreBoard.xWins}}</h2>
     </section>
 
     <!-- scoreboard player 1 -->
     <section id="ties">
-      <h2>Ties</h2>
-      <h3>{{ttt.scoreBoard.ties}}</h3>
+      <h2>Ties: {{ttt.scoreBoard.ties}}</h2>
     </section>
 
     <!-- scoreboard player 2 -->
     <section id="player2">
-      <h2>Wins</h2>    
-      <h3>Player O: {{ttt.scoreBoard.oWins}}</h3>
+      <h2>Player 2 Wins: {{ttt.scoreBoard.oWins}}</h2>    
     </section>
 
-  </div>
+    <h3 id="win-message">{{ ttt.winningMessage }}</h3>
 
-  <h2>{{ ttt.winningMessage }}</h2>
+  </div>
 
 <!-- game board with 9 tiles -->
   <div class="game-container">
@@ -50,7 +48,7 @@
 
     <!-- restart button -->
     <div class="restart">
-      <button ng-click="ttt.clearBoard()">Restart Game</button>
+      <button ng-click="ttt.clearBoard()">Play a New Game</button>
     </div>
 
   </div>

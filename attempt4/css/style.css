@@ -1,73 +1,13 @@
 body{
   text-align: center;
-  font-family: "shithead";
-  background-color: #ecf8ff;
+  font-family: 'Amatic SC', cursive;
   color: #868686;
+  background-image: url('../images/bg-img.jpg');
+  background-repeat: repeat;
 }
 
-h2{
-  font-size: 50px;
-  margin: 0px;
-}
-
-.game-container{
-  width: 450px;
-  height: 400px;
-  margin: 0 auto;
-}
-
-.game-board{
-  width: 110px;
-  height: 110px;
-
-  margin: 7px;
-  margin-top: 18px;
-
-  display: inline-block;
-  vertical-align: top;
-  line-height: 100px;
-
-  background-color: white;
-
-  border-radius: 30px;
-  box-shadow: 7px 7px 5px -3px #466181;
-
+h1{
   font-size: 100px;
-
-  transition-property: background;
-  transition-duration: 0.75s;
-  transition-timing-function: linear;
-}
-
-.game-board:hover {
-  background: pink;
-}
-
-.game-board:active{
-  box-shadow: inset 7px 7px 5px -3px #466181;
-}
-
-.restart{
-  margin: 0 auto;
-}
-
-button{
-  border-radius: 10px;
-  background-color: pink;
-  border: none;
-  padding: 10px;
-  box-shadow: 7px 7px 5px -3px #466181;
-
-  position: relative;;
-}
-
-button:active{
-  box-shadow: inset 7px 7px 5px -3px #466181;
-}
-
-.restart{
-  width: 100px;
-  height: 15px;
   margin-top: 20px;
 }
 
@@ -77,29 +17,107 @@ button:active{
   margin: 0 auto;
 
   position: relative;
-  top: 20px;
+  top: -10px;
+}
+
+h2{
+  font-size: 50px;
+  padding-top: 25px;
+}
+
+#win-message{
+  font-size: 50px;
+  margin-top: 50px;
+
+  display: inline-block;
+  vertical-align: top
 }
 
 #player1, #player2, #ties{
   display: inline-block;
   text-align: center;
   width: 30%;
-  height: 140px;
-  margin: 10px 10px;
+  height: 100px;
+  margin-right: 20px;
+
+  position: relative;
+  top: 40px;
   border-radius: 20px;
   background-color: #fff3f3;
 
-  text-align: center;
-
-  box-shadow: 4px 4px 5px -3px #466181;
+  box-shadow: 4px 4px 5px -3px #d0aaaa;
 }
 
-h3{
+.game-container{
+  width: 420px;
+  height: 490px;
+  margin: 0 auto;
+  background-color: #d3e4c3;
+  border-radius: 15px;  
+  box-shadow: 5px 5px 5px -3px #849b6d;
+}
+
+.game-board{
+  width: 110px;
+  height: 110px;
+
+  margin: 20px 10px 5px 10px;
+
+  display: inline-block;
+  vertical-align: top;
+  line-height: 100px;
+
+  background-color: white;
+
+  border-radius: 30px;
+  box-shadow: 7px 7px 5px -3px #849b6d;
+
+  font-size: 100px;
+
+  transition-property: background;
+  transition-duration: 0.5s;
+  transition-timing-function: linear;
+}
+
+.game-board:hover {
+  background: #8ca474;
+  color: white;
+}
+
+.game-board:active{
+  box-shadow: inset 7px 7px 5px -3px #849b6d;
+  background-color: white;
+}
+
+.restart{
+  width: 420px;
+}
+
+button{
+  border-radius: 10px;
+  background-color: white;
+  border: none;
+  padding: 10px;
+  box-shadow: 7px 7px 5px -3px #849b6d;
+
+  font-family: 'Amatic SC', cursive;
+  font-size: 25px;
+
+  width: 200px;
+  height: 50px;
+
   text-align: center;
-  font-family: existence;
-  margin: 0px;
-  vertical-align: bottom;
-  display: block;
+  margin-left: 115px;
+}
+
+button:active{
+  box-shadow: inset 7px 7px 5px -3px #849b6d;
+}
+
+.restart{
+  width: 100px;
+  height: 15px;
+  margin-top: 20px;
 }
 
 .username{
@@ -107,7 +125,7 @@ h3{
   height: 15px;
 
   text-align: center;
-  font-family: existence;
+  font-family: 'Amatic SC', cursive;
   border-radius: 20px;
 }
 
@@ -117,12 +135,15 @@ h3{
 
 }
 
-label { display:block; margin: 1em; }
+label { 
+  display:block; margin: 1em; 
+}
+
 input {
   display: inline-block;
   padding: 0.382em;
   border: none;
-  font-family: "IM Fell English", Georgia, "Times New Roman";
+  font-family: 'Amatic SC', cursive;
   font-size: 16px; 
   font-style: italic; 
   margin: 0;
@@ -153,7 +174,7 @@ input{
   position: relative;
   top: 45px;
 
-  font-family: "shithead";
+  font-family: 'Amatic SC', cursive;
   font-size: 15px;
 
 }
