@@ -40,7 +40,26 @@ h2{
 }
 
 .restart{
+  margin: 0 auto;
+}
+button{
+  border-radius: 10px;
+  background-color: pink;
+  border: none;
+  padding: 10px;
+  box-shadow: 7px 7px 5px -3px #466181;
 
+  position: relative;;
+}
+
+button:active{
+  box-shadow: inset 7px 7px 5px -3px #466181;
+}
+
+.restart{
+  width: 100px;
+  height: 15px;
+  margin-top: 20px;
 }
 
 .scoreboard{

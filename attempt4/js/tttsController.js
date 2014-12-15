@@ -130,12 +130,6 @@ function tttsController($firebase){
   }
 
 
-
-  // function addPlayer(newPlayerObj){
-  //   self.boardSquareList.$add(newPlayerObj);
-  //   self.newPlayer = null;
-  // }
-
   // function getChatLog() {
   //   // var presidents = [
   //   //   {name: "George Washington"},
