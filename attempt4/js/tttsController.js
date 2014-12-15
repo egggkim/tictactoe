@@ -27,6 +27,9 @@ function tttsController($firebase){
   self.playerTurn    = playerTurn;
   self.currentPlayer = 1;
   self.clearBoard    = clearBoard; 
+  self.scoreBoard    = {xWins: 0, oWins: 0, ties: 0};
+  self.playerOne     = self.playerOne;
+  self.playerTwo     = self.playerTwo;
 
   // connection to firebase, loads gameboard to browser
   function getBoardSquareList(){
@@ -86,10 +89,12 @@ function tttsController($firebase){
 
     if (xWinScenario){
       self.winningMessage = letter1 + " wins!";
+      self.scoreBoard.xWins++
       }
 
     else if (oWinScenario){
       self.winningMessage = letter2 + " wins!";
+      self.scoreBoard.oWins++
     }
   }
 
@@ -126,6 +131,18 @@ function tttsController($firebase){
     for (var i = 0; i < self.boardSquareList.length; i++){
     self.boardSquareList[i].playerClicked = " ";
     self.winningMessage = " ";
+    }
+  }
+
+  function playerOne(){
+    if(self.playerOne === " "){
+      return "Player 1";
+    }
+  }
+
+  function playerTwo(){
+    if(self.playerTwo === " "){
+      return "Player 2";
     }
   }
 
