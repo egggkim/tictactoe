@@ -37,17 +37,17 @@
       <file leaf-file-name="tttsController.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/tttsController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-21.346153" vertical-offset="915" max-vertical-offset="2340">
-              <caret line="98" column="27" selection-start-line="98" selection-start-column="27" selection-end-line="98" selection-end-column="27" />
+            <state vertical-scroll-proportion="-21.346153" vertical-offset="990" max-vertical-offset="2430">
+              <caret line="103" column="9" selection-start-line="103" selection-start-column="9" selection-end-line="103" selection-end-column="9" />
               <folding>
-                <marker date="1418619821000" expanded="true" signature="746:828" placeholder="{...}" />
-                <marker date="1418619821000" expanded="true" signature="941:1141" placeholder="{...}" />
-                <marker date="1418619821000" expanded="true" signature="1172:1344" placeholder="{...}" />
-                <marker date="1418619821000" expanded="true" signature="1568:1976" placeholder="{...}" />
-                <marker date="1418619821000" expanded="true" signature="1843:1919" placeholder="{...}" />
-                <marker date="1418619821000" expanded="true" signature="2240:2766" placeholder="{...}" />
-                <marker date="1418619821000" expanded="true" signature="2601:2683" placeholder="{...}" />
-                <marker date="1418619821000" expanded="true" signature="3058:3094" placeholder="{...}" />
+                <marker date="1418620989000" expanded="true" signature="746:828" placeholder="{...}" />
+                <marker date="1418620989000" expanded="true" signature="941:1141" placeholder="{...}" />
+                <marker date="1418620989000" expanded="true" signature="1172:1344" placeholder="{...}" />
+                <marker date="1418620989000" expanded="true" signature="1568:1976" placeholder="{...}" />
+                <marker date="1418620989000" expanded="true" signature="1843:1919" placeholder="{...}" />
+                <marker date="1418620989000" expanded="true" signature="2240:2766" placeholder="{...}" />
+                <marker date="1418620989000" expanded="true" signature="2601:2683" placeholder="{...}" />
+                <marker date="1418620989000" expanded="true" signature="3057:3095" placeholder="{...}" />
               </folding>
             </state>
           </provider>
@@ -228,17 +228,17 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/js/tttsController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-21.346153" vertical-offset="915" max-vertical-offset="2340">
-          <caret line="98" column="27" selection-start-line="98" selection-start-column="27" selection-end-line="98" selection-end-column="27" />
+        <state vertical-scroll-proportion="-21.346153" vertical-offset="990" max-vertical-offset="2430">
+          <caret line="103" column="9" selection-start-line="103" selection-start-column="9" selection-end-line="103" selection-end-column="9" />
           <folding>
-            <marker date="1418619821000" expanded="true" signature="746:828" placeholder="{...}" />
-            <marker date="1418619821000" expanded="true" signature="941:1141" placeholder="{...}" />
-            <marker date="1418619821000" expanded="true" signature="1172:1344" placeholder="{...}" />
-            <marker date="1418619821000" expanded="true" signature="1568:1976" placeholder="{...}" />
-            <marker date="1418619821000" expanded="true" signature="1843:1919" placeholder="{...}" />
-            <marker date="1418619821000" expanded="true" signature="2240:2766" placeholder="{...}" />
-            <marker date="1418619821000" expanded="true" signature="2601:2683" placeholder="{...}" />
-            <marker date="1418619821000" expanded="true" signature="3058:3094" placeholder="{...}" />
+            <marker date="1418620989000" expanded="true" signature="746:828" placeholder="{...}" />
+            <marker date="1418620989000" expanded="true" signature="941:1141" placeholder="{...}" />
+            <marker date="1418620989000" expanded="true" signature="1172:1344" placeholder="{...}" />
+            <marker date="1418620989000" expanded="true" signature="1568:1976" placeholder="{...}" />
+            <marker date="1418620989000" expanded="true" signature="1843:1919" placeholder="{...}" />
+            <marker date="1418620989000" expanded="true" signature="2240:2766" placeholder="{...}" />
+            <marker date="1418620989000" expanded="true" signature="2601:2683" placeholder="{...}" />
+            <marker date="1418620989000" expanded="true" signature="3057:3095" placeholder="{...}" />
           </folding>
         </state>
       </provider>

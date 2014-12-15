@@ -150,7 +150,7 @@ function tttsController($firebase){
     }
   }
 
-  }
+}
 
 
 

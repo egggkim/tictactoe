@@ -33,6 +33,14 @@ h2{
   box-shadow: 7px 7px 5px -3px #466181;
 
   font-size: 100px;
+
+  transition-property: background;
+  transition-duration: 0.75s;
+  transition-timing-function: linear;
+}
+
+.game-board:hover {
+  background: pink;
 }
 
 .game-board:active{
@@ -42,6 +50,7 @@ h2{
 .restart{
   margin: 0 auto;
 }
+
 button{
   border-radius: 10px;
   background-color: pink;
