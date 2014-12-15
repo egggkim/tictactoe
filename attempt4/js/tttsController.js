@@ -121,6 +121,7 @@ function tttsController($firebase){
     for (var i = 0; i < self.boardSquareList.length; i++){
     self.boardSquareList[i].playerClicked = " ";
     self.winningMessage = " ";
+    self.clickCount = 0;
     }
   }
 
@@ -131,4 +132,3 @@ function tttsController($firebase){
     }
   }
 }
-

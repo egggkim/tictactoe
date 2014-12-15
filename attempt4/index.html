@@ -53,18 +53,6 @@
 
   </div>
 
-<!-- assigning player names -->
-  <h4>Players:</h4>
-  <div class="player" ng-repeat="user in ttt.playersList">
-    <input type="text" ng-model="user.name" ng-change="ttt.playersList.$save(user)">
-  </div>
-  
-  <div>
-    <form ng-submit="ttt.addPlayer(ttt.newUser)">
-      <input type="text" ng-model="ttt.newUser.name" placeholder="Enter your name"  />
-    </form>
-  </div>
-
 </body>
 
 </html>
