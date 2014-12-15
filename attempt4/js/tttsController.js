@@ -75,7 +75,6 @@ function tttsController($firebase){
     else if (oWinScenario){
       self.winningMessage = letter2 + " won";
     }
-
   }
 
   function checkRows(){
