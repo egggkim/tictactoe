@@ -47,10 +47,10 @@ function tttsController($firebase){
     return users;
   }
 
+  // needs to be fixed. currently does NOTHING! 
   function addPlayer(newUser){
     self.playersList.$add(newUser);
     self.newUser = null;
-
   }
 
   // called when any player clicks game-board 
@@ -72,8 +72,7 @@ function tttsController($firebase){
       }
       
     }
-
-    // invoke the following functions on each game-board click 
+    // invoke the following function on each game-board click 
     checkResults();
   }
 
@@ -83,22 +82,25 @@ function tttsController($firebase){
     var letter1      = "x";
     var letter2      = "o";
     var line         = arr[index1].playerClicked + arr[index2].playerClicked + arr[index3].playerClicked;
-    var xWinScenario = (line === letter1 + letter1 + letter1);
-    var oWinScenario = (line === letter2 + letter2 + letter2);
+    var xWin = (line === letter1 + letter1 + letter1);
+    var oWin = (line === letter2 + letter2 + letter2);
 
-    if (xWinScenario){
+    if (xWin){
       self.winningMessage = letter1 + " wins!";
       self.scoreBoard.xWins++;
       }
 
-    else if (oWinScenario){
+    else if (oWin){
       self.winningMessage = letter2 + " wins!";
       self.scoreBoard.oWins++;
     }
 
-    else{
-      checkCats();
+    else {
+      if (self.clickCount === 9){
+        checkCats();
+      }
     }
+
   }
 
   function checkResults(){
@@ -117,6 +119,7 @@ function tttsController($firebase){
   checkWin(2, 4, 6);
 }
 
+  // resets win message, click count, and game board to original states 
   function clearBoard(){
     for (var i = 0; i < self.boardSquareList.length; i++){
     self.boardSquareList[i].playerClicked = " ";
@@ -126,9 +129,7 @@ function tttsController($firebase){
   }
 
   function checkCats(){
-    if (self.clickCount === 9){
-      self.winningMessage = "tie game!";
-      self.scoreBoard.ties++;
-    }
+    self.winningMessage = "tie game!";
+    self.scoreBoard.ties += 1;
   }
 }
