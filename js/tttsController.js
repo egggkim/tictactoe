@@ -23,7 +23,6 @@ function tttsController($firebase){
     {playerClicked: " "},
     {playerClicked: " "}
   ];
-  self.winningMessage = " ";
   self.playersList    = getPlayersList();
   self.addPlayer      = addPlayer;
   self.playerTurn     = playerTurn;
@@ -88,7 +87,7 @@ function tttsController($firebase){
     if (xWin){
       self.winningMessage = letter1 + " wins!";
       self.scoreBoard.xWins++;
-      }
+    }
 
     else if (oWin){
       self.winningMessage = letter2 + " wins!";
@@ -104,27 +103,27 @@ function tttsController($firebase){
   }
 
   function checkResults(){
-  // checks rows for wins
-  checkWin(0, 1, 2);
-  checkWin(3, 4, 5);
-  checkWin(6, 7, 8);
+    // checks rows for wins
+    checkWin(0, 1, 2);
+    checkWin(3, 4, 5);
+    checkWin(6, 7, 8);
 
-  // checks columns for wins
-  checkWin(0, 3, 6);
-  checkWin(1, 4, 7);
-  checkWin(2, 5, 8);
+    // checks columns for wins
+    checkWin(0, 3, 6);
+    checkWin(1, 4, 7);
+    checkWin(2, 5, 8);
 
-  // checks diagonals for wins
-  checkWin(0, 4, 8);
-  checkWin(2, 4, 6);
-}
+    // checks diagonals for wins
+    checkWin(0, 4, 8);
+    checkWin(2, 4, 6);
+  }
 
   // resets win message, click count, and game board to original states 
   function clearBoard(){
     for (var i = 0; i < self.boardSquareList.length; i++){
-    self.boardSquareList[i].playerClicked = " ";
-    self.winningMessage = " ";
-    self.clickCount = 0;
+      self.boardSquareList[i].playerClicked = " ";
+      self.winningMessage = " ";
+      self.clickCount = 0;
     }
   }
 
